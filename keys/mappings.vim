@@ -39,6 +39,8 @@ vnoremap > >gv
 
 " Use control-c instead of escape
 nnoremap <C-c> <Esc>
+" Use control-x instead of escape
+nnoremap <C-x> <Esc>
 
 " Better window navigation
 nnoremap <C-h> <C-w>h
@@ -50,11 +52,11 @@ nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
 
 " NERDTree closes after 1 open (not cool at the moment)
-let NERDTreeQuitOnOpen=1
+" let NERDTreeQuitOnOpen=1
 " Open NERDTree with LeaderKey + nt
 " nmap <Leader>nt :NERDTreeFind<CR>
 " Open NERDTree with LeaderKey + n
-nmap <Leader>n :NERDTreeFind<CR>
+" nmap <Leader>n :NERDTreeFind<CR>
 
 " @ to clean the search made with / (Press SPACE + z)
 " OR try with :noh but this have a weird behavior.
@@ -63,7 +65,7 @@ nmap <Leader>n :NERDTreeFind<CR>
 " When replace [:%s/foo/bar] before you hit Enter you'll see the live result 
 set inccommand=nosplit
 
-" Creates a file if doesn't exist
+" Creates a file if doesn't exist. space + g + f
 map <leader>gf :e <cfile><cr>
 
 " Buffer Delete

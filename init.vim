@@ -9,6 +9,12 @@ source $HOME/.config/nvim/keys/mappings.vim
 " Startify (Start-screen)
 source $HOME/.config/nvim/plug-config/start-screen.vim
 
+" NerdTree 
+" source $HOME/.config/nvim/plug-config/nerdtree-config.vim
+
+" Devicons *NerdTree Icons 
+" source $HOME/.config/nvim/plug-config/devicons-config.vim
+
 " Which-Key (Cheatsheet Keybidings) 
 " source $HOME/.config/nvim/keys/which-key.vim
 
@@ -17,6 +23,12 @@ source $HOME/.config/nvim/plug-config/markdown-preview.vim
 
 " Emmet-vim [HTML] (key combinations)
 source $HOME/.config/nvim/plug-config/emmet-vim.vim
+
+" Telescope config 
+source $HOME/.config/nvim/plug-config/telescope.vim
+
+" FZF config 
+" source $HOME/.config/nvim/plug-config/fzf.vim
 
 " Sneak (search words)
 source $HOME/.config/nvim/plug-config/sneak.vim
@@ -36,6 +48,8 @@ source $HOME/.config/nvim/themes/airline.vim
 " | | | | IndentLine (Indentation lines) | | | |
 source $HOME/.config/nvim/plug-config/indentLine.vim
 
+"           [ [ [ Floaterm ] ] ]
+source $HOME/.config/nvim/plug-config/floaterm.vim
 
 "        ~ ~ ~ ~ ~ Themes ~ ~ ~ ~ ~
 " >> CHECK: plugins.vim & airline.vim <<
@@ -51,5 +65,3 @@ highlight Comment cterm=italic gui=italic
 
 " ~ ~ ~ ~ Transparent Background ~ ~ ~ ~
 " hi Normal guibg=NONE ctermbg=NONE
-
-

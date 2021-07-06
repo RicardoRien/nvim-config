@@ -11,6 +11,9 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
+" Shows just the name of the file and NOT the path, in tabs
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 
 " enable powerline fonts
 let g:airline_powerline_fonts = 1

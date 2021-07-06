@@ -38,6 +38,13 @@ au BufEnter * set fo-=c fo-=r fo-=o     " Stop newline of comments. This really 
 set autochdir                           " Your working directory will always be the same as your working directory
 set ignorecase                          " Make search insensitive
 set smartcase                           " If search has uppercase is sensitive
+" ------------------- Netrw ---------------------
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
 
 " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 au! BufWritePost $MYVIMRC source %      
@@ -45,3 +52,10 @@ au! BufWritePost $MYVIMRC source %
 " You can't stop me
 cmap w!! w !sudo tee %
 
+" Open terminal split right
+noremap <Leader>\t :botright vertical terminal<CR>
+
+" :terminal inser mode automatic
+if has('nvim')
+    autocmd TermOpen term://* startinsert
+endif

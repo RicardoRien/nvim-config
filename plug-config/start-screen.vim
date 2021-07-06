@@ -27,6 +27,7 @@ let g:webdevicons_enable_startify = 1
 
 let g:startify_bookmarks = [
             \ { 'h': '~' },
+            \ { 'i': '~/.config/nvim/init.vim' },
             \ ]
 
 let g:startify_enable_special = 0
