@@ -1,0 +1,12 @@
+{
+  "snippets": [
+    {
+      "language": "javascriptreact",
+      "path": "./generated.json"
+    },
+    {
+      "language": "typescriptreact",
+      "path": "./generated.json"
+    }
+  ]
+}
