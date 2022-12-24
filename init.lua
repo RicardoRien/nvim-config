@@ -1,9 +1,9 @@
 -- instalar tjdevries/colorbuddy.nvim 
 require "user.luasnip"
+require "user.colorscheme"
 require "user.lualine"
 require "user.options"
 require "user.plugins"
-require "user.colorscheme"
 require "user.cmp"
 require "user.functions"
 require "user.telescope"

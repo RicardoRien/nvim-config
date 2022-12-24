@@ -682,7 +682,7 @@
   },
   "consoleLog": {
     "key": "consoleLog",
-    "prefix": "clg",
+    "prefix": "cl",
     "body": ["console.log(${1:first})"],
     "description": "Displays a message in the console",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -1654,8 +1654,23 @@
   "forEach": {
     "key": "forEach",
     "prefix": "fre",
-    "body": ["${1:first}.forEach(${2:second} => {${3:third}})"],
+    "body": [
+      "${1:first}.forEach(${2:second} => {",
+      "  ",
+      "})"
+    ],
     "description": "Creates a forEach statement",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "forLoop": {
+    "key": "forLoop",
+    "prefix": "for",
+    "body": [
+      "for (let i = 0; i < foo.length; i++) {",
+      "  return foo[i]",
+      "}"
+    ],
+    "description": "Creates a for loop statement",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "forOf": {
@@ -1902,6 +1917,123 @@
     "key": "typeofSnippet",
     "prefix": "tpf",
     "body": ["typeof ${1:first}"],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "interface": {
+    "key": "interface",
+    "prefix": "in",
+    "body": [
+     "interface FooBar {",
+     "  foo: bar",
+     "  zap: (event: React.MouseEvent<HTMLElement>) => void,",
+     "}"
+    ],
+    "scope": "typescript,typescriptreact,javascriptreact"
+  },
+  "trycatch": {
+    "key": "tryCatch",
+    "prefix": "try",
+    "body": [
+    "try {",
+    "  ",
+    "} catch (error) {",
+    "  console.error(error)",
+    "}"
+    ],
+    "scope": "typescript,typescriptreact,javascriptreact,javascript"
+  },
+  "arrowFunction": {
+    "key": "arrowFunction",
+    "prefix": ["afn", "arrow"],
+    "body": [
+      "const ${1:first} = () => {",
+      "  ",
+      "}"
+    ],
+    "description": "Creates an Arrow Function",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "function": {
+    "key": "function",
+    "prefix": ["fn", "function"],
+    "body": [
+      "function ${1:name}(${2:param}) {",
+      "  ",
+      "}"
+    ],
+    "description": "Creates a function",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "bracketsImport": {
+    "key": "bracketsImport",
+    "prefix": "bim",
+    "body": ["export { } from '${1:module}'"],
+    "description": "Import ES6with brackets",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "normalImport": {
+    "key": "normalImport",
+    "prefix": "nim",
+    "body": ["export  from '${1:module}'"],
+    "description": "Import ES6",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "if": {
+    "key": "ifStatement",
+    "prefix": "if",
+    "body": [
+      "if (${1:expr}) {",
+      "  ",
+      "}"
+    ],
+    "description": "If statement",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "if else": {
+    "key": "ifElseStatement",
+    "prefix": "ifelse",
+    "body": [
+      "if (${1:expr}) {",
+      "  ",
+      "} else {",
+      "  ",
+      "}"
+    ],
+    "description": "If else statement",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "case": {
+    "key": "switchStatement",
+    "prefix": ["switchcase", "case", "switch"],
+    "body": [
+      "switch (${1:expr}) {",
+      "  case '':",
+      "    ",
+      "    break",
+      "default:",
+      "  console.log('default')",
+      "}"
+    ],
+    "description": "Switch statement",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "const": {
+    "key": "const",
+    "prefix": ["c", "co", "con"],
+    "body": [
+      "const "
+    ],
+    "description": "const",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "flatten": {
+    "key": "flatten",
+    "prefix": ["flat", "flatten", "redu", "reduce"],
+    "body": [
+      "const flatten = arr => arr.reduce((a, c) => a.concat(c), [])",
+      "// [[1], [2], [3]] => [1, 2, 3]"
+    ],
+    "description": "[[1], [2], [3]] => [1, 2, 3]",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   }
 }

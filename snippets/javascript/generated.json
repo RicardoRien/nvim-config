@@ -1,0 +1,31 @@
+{
+  "consoleLog": {
+    "key": "function",
+    "prefix": "cl",
+    "body": ["console.log(${1:first})"],
+    "description": "Displays a message in the console",
+    "scope": "javascript"
+  },
+  "arrowFunction": {
+    "key": "arrowFunction",
+    "prefix": "afn",
+    "body": [
+      "const ${1:first} = () => {",
+      "",
+      "}"
+    ],
+    "description": "Creates a arrow function",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "exportArrowFunction": {
+    "key": "arrowFunction",
+    "prefix": "eafn",
+    "body": [
+      "export const ${1:first} = () => {",
+      "",
+      "}"
+    ],
+    "description": "Creates an export arrow function",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  }
+}

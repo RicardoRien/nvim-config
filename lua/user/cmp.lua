@@ -8,7 +8,19 @@ if not snip_status_ok then
   return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+--[[ require("luasnip/loaders/from_vscode").lazy_load() ]]
+-- require("luasnip/loaders/from_vscode").load({ paths = { "../../snippets/typescript/generated.json" } })
+
+local ls = require "luasnip"
+
+-- Load default snippets that comes with luasnip
+-- require("luasnip.loaders.from_vscode").lazy_load()
+-- Load custom snippets
+require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets/react_ts" } }
+-- require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets/typescript" } }
+require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets/javascript" } }
+
+ls.filetype_extend("all", { "_" })
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -21,7 +33,7 @@ local kind_icons = {
   Method = "m",
   Function = "",
   Constructor = "",
-  Field = "",
+  Field = "",
   Variable = "",
   Class = "",
   Interface = "",
@@ -31,13 +43,13 @@ local kind_icons = {
   Value = "",
   Enum = "",
   Keyword = "",
-  Snippet = "",
+  Snippet = "",
   Color = "",
   File = "",
   Reference = "",
   Folder = "",
   EnumMember = "",
-  Constant = "",
+  Constant = "",
   Struct = "",
   Event = "",
   Operator = "",

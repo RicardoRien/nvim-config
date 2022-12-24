@@ -12,10 +12,13 @@ local servers = {
   "cssls",
   "cssmodules_ls",
   "html",
+  "emmet_ls",
+  "dockerls",
   "jsonls",
   "sumneko_lua",
   "tsserver",
   "pyright",
+  "prismals",
   "yamlls"
 }
 

@@ -1,9 +1,24 @@
 {
-  "consoleLog": {
-    "key": "consoleLog",
-    "prefix": "clg",
-    "body": ["console.log(${1:first})"],
-    "description": "Displays a message in the console",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  "arrowFunctionTs": {
+    "key": "arrowFunctionTs",
+    "prefix": "afn",
+    "body": [
+      "const ${1:first: string} = ():any => {",
+      "",
+      "}"
+    ],
+    "description": "Creates a arrow function",
+    "scope": "typescript,typescriptreact"
+  },
+  "exportArrowFunctionTs": {
+    "key": "exportArrowFunctionTs",
+    "prefix": "eafn",
+    "body": [
+      "export const ${1:first: string} = ():any => {",
+      "",
+      "}"
+    ],
+    "description": "Creates a arrow function",
+    "scope": "typescript,typescriptreact"
   }
 }

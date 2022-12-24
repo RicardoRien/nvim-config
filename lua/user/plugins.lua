@@ -100,6 +100,7 @@ return packer.startup(function(use)
        --[[ "rcarriga/nvim-notify", ]]
        }
    })
+  use "pantharshit00/vim-prisma" -- Prisma ORM
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes
