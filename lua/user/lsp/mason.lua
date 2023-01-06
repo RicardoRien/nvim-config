@@ -12,7 +12,6 @@ local servers = {
   "cssls",
   "cssmodules_ls",
   "html",
-  "emmet_ls",
   "dockerls",
   "jsonls",
   "sumneko_lua",
@@ -64,6 +63,11 @@ for _, server in pairs(servers) do
   if server == "sumneko_lua" then
     local emmet_ls_opts = require "user.lsp.settings.sumneko_lua"
     opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
+  end
+
+  if server == "html" then
+    local html_opts = require "user.lsp.settings.html"
+    opts = vim.tbl_deep_extend("force", html_opts, opts)
   end
 
   lspconfig[server].setup(opts)

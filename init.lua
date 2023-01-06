@@ -23,6 +23,7 @@ require "user.colorful-winsep"
 require "user.cokeline"
 require "user.lsp"
 require "user.sneak"
+require "user.todo-comments"
 --[[ require "user.nvim-notify" ]]
 --[[ require "user.leap" ]]
 --[[ require "user.bufferline" ]]
@@ -48,3 +49,4 @@ end
 vim.api.nvim_create_user_command("Deletem", function()
   deletem()
 end, { nargs = "*" })
+

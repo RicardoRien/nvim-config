@@ -64,7 +64,8 @@ keymap("n", "U", "<C-R>", opts)
 --[[ keymap("n", "<Leader>z", ":let @/=''<CR>", opts) ]]
 --[[ keymap("n", "<Leader>z", ":lua require('notify').dismiss()<CR>", opts) ]]
  --[[ keymap("n", "<Leader>z", ":noh<CR> <BAR> :lua require('notify').dismiss()<CR> <BAR> :let @/=''<CR>", opts) ]]
- keymap("n", "<Leader>z", ":let @/=''<CR>", opts)
+ --[[ keymap("n", "<Leader>z", ":let @/=''<CR>", opts) ]]
+ keymap("n", "<Leader>z", ":nohlsearch<CR>", opts)
 
 
 -- Turn off al notifications
@@ -138,6 +139,12 @@ vim.cmd [[nmap <f2> :set norelativenumber! number?<cr>]]
 -- Copy relative path
 vim.cmd [[nmap <f3> :let @+=@%<cr>]]
 
+-- Set wrap to text (ideal for .txt files / Notes)
+vim.cmd [[nmap <f4> :set wrap linebreak nolist<cr>]]
+
 -- ":Q" as ":q"
 vim.cmd [[command! Qa :qa]]
 vim.cmd [[command! Q :q]]
+
+--[[ vim.keymap.set('n', 'v', 'mav', { noremap = true }) ]]
+--[[ vim.keymap.set('v', '<Esc>', "<Esc>`a", { noremap = true, silent = true }) ]]

@@ -9,7 +9,7 @@ local icons = require("user.icons")
 
 telescope.setup {
   defaults = {
-    file_ignore_patterns = {"node_modules", "package-lock", "yarn.lock"},
+    file_ignore_patterns = {"node_modules", "package-lock", "yarn.lock", "build"},
     prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
     path_display = { "smart" },

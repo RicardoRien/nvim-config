@@ -1,4 +1,4 @@
-Requires Neovim v0.6.0 or Nightly.
+Requires Neovim v0.8.0 or Nightly.
 
 Copy/Paste support:
 
@@ -14,7 +14,7 @@ Copy/Paste support:
 
   ```
   sudo pacman -S xsel
-
+  ```
 
 To install Python/Node support:
 

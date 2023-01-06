@@ -1989,7 +1989,7 @@
     "description": "If statement",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
-  "if else": {
+  "ifElse": {
     "key": "ifElseStatement",
     "prefix": "ifelse",
     "body": [
@@ -2034,6 +2034,15 @@
       "// [[1], [2], [3]] => [1, 2, 3]"
     ],
     "description": "[[1], [2], [3]] => [1, 2, 3]",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "ternaryOperator": {
+    "key": "ternaryOperator",
+    "prefix": ["ter", "ternary"],
+    "body": [
+      "a == b ? true : false"
+    ],
+    "description": "ternary operation",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   }
 }

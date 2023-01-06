@@ -13,10 +13,10 @@ if fn.empty(fn.glob(install_path)) > 0 then
     "1",
     "https://github.com/wbthomason/packer.nvim",
     install_path,
-   }
- print "Installing packer close and reopen Neovim..."
- vim.cmd [[packadd packer.nvim]]
- end
+  }
+  print "Installing packer close and reopen Neovim..."
+  vim.cmd [[packadd packer.nvim]]
+end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
@@ -36,8 +36,8 @@ end
 packer.init {
   display = {
     open_fn = function()
-     return require("packer.util").float { border = "rounded" }
-  end,
+      return require("packer.util").float { border = "rounded" }
+    end,
   },
 }
 
@@ -49,6 +49,10 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+  }
   use 'kyazdani42/nvim-web-devicons' -- Cool loking icons
   use 'kyazdani42/nvim-tree.lua' -- Folder-tree navigation
   use "akinsho/toggleterm.nvim" -- Terminal floating window
@@ -71,35 +75,35 @@ return packer.startup(function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
-  use {'akinsho/git-conflict.nvim', config = function()
+  use { 'akinsho/git-conflict.nvim', config = function()
     require('git-conflict').setup()
-  end}
+  end }
   use "goolord/alpha-nvim" -- Main dashboard
   use "RRethy/vim-illuminate" -- highlight words when are under the cursor
   use {
     "AckslD/nvim-neoclip.lua",
     requires = {
-      {'nvim-telescope/telescope.nvim'},
+      { 'nvim-telescope/telescope.nvim' },
     },
     config = function()
       require('neoclip').setup()
     end,
   }
-   use({
-     "folke/noice.nvim",
-     event = "VimEnter",
-     config = function()
-       require("noice").setup()
-     end,
-     requires = {
-       --[[ if you lazy-load any plugin below, make sure to add proper `module="..."` entries ]]
-       "MunifTanjim/nui.nvim",
-       --[[ OPTIONAL: ]]
-       --[[   `nvim-notify` is only needed, if you want to use the notification view. ]]
-       --[[   If not available, we use `mini` as the fallback ]]
-       --[[ "rcarriga/nvim-notify", ]]
-       }
-   })
+  use({
+    "folke/noice.nvim",
+    event = "VimEnter",
+    config = function()
+      require("noice").setup()
+    end,
+    requires = {
+      --[[ if you lazy-load any plugin below, make sure to add proper `module="..."` entries ]]
+      "MunifTanjim/nui.nvim",
+      --[[ OPTIONAL: ]]
+      --[[   `nvim-notify` is only needed, if you want to use the notification view. ]]
+      --[[   If not available, we use `mini` as the fallback ]]
+      --[[ "rcarriga/nvim-notify", ]]
+    }
+  })
   use "pantharshit00/vim-prisma" -- Prisma ORM
 
   -- Colorschemes
