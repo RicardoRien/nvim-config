@@ -20,5 +20,16 @@
     ],
     "description": "Creates a arrow function",
     "scope": "typescript,typescriptreact"
+  },
+  "interface": {
+    "key": "interface",
+    "prefix": "in",
+    "body": [
+     "interface FooBar {",
+     "  foo: bar",
+     "  zap: (event: React.MouseEvent<HTMLElement>) => void,",
+     "}"
+    ],
+    "scope": "typescript,typescriptreact,javascriptreact"
   }
 }

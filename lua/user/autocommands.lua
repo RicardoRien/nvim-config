@@ -7,20 +7,24 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   end,
 })
 
--- start terminal in insert mode
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+  callback = function()
+    vim.cmd "hi link illuminatedWord LspReferenceText"
+  end,
+})
+
+-- Start terminal in insert mode
 vim.api.nvim_create_autocmd('TermOpen',     {
   group    = 'bufcheck',
   pattern  = '*',
   command  = 'startinsert | set winfixheight'
 })
 
--- vim.api.nvim_create_autocmd('ColorScheme', {
---   pattern = 'onedark',
---   desc = 'extend / override onedark',
---   callback = function()
---     local h = function(...) vim.api.nvim_set_hl(0, ...) end
---
---     h('String', {fg = '#FFEB95'})
---     h('TelescopeMatching', {link = 'Boolean'})
---   end
--- })
+-- No wrap in gitcommit, markdown and .txt files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "gitcommit", "markdown", ".txt" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+  end,
+})

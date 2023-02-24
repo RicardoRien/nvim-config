@@ -1966,8 +1966,8 @@
   },
   "bracketsImport": {
     "key": "bracketsImport",
-    "prefix": "bim",
-    "body": ["export { } from '${1:module}'"],
+    "prefix": ["bim", "ibm", "imb"],
+    "body": ["import { } from '${1:module}'"],
     "description": "Import ES6with brackets",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },

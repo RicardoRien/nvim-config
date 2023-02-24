@@ -10,11 +10,12 @@ end
 
 local servers = {
   "cssls",
+  "graphql",
   "cssmodules_ls",
   "html",
   "dockerls",
   "jsonls",
-  "sumneko_lua",
+  "lua_ls",
   "tsserver",
   "pyright",
   "prismals",
@@ -60,8 +61,8 @@ for _, server in pairs(servers) do
   --[[   opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts) ]]
   --[[ end ]]
 
-  if server == "sumneko_lua" then
-    local emmet_ls_opts = require "user.lsp.settings.sumneko_lua"
+  if server == "lua_ls" then
+    local emmet_ls_opts = require "user.lsp.settings.lua_ls"
     opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
   end
 
