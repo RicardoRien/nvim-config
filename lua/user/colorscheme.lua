@@ -88,7 +88,8 @@ require("tokyonight").setup({
 })
 
 -- require('onedark').load()
-require('tokyonight').load()
+require('tokyonight').load() 
+--require('cobal2').load()
 --[[ require('user.colorscheme.neosolarizedrc').load() ]]
 
 vim.cmd [[

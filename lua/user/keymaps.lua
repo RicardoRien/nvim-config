@@ -123,6 +123,7 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>1", "<cmd>Telescope diagnostics<cr>", opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 -- Live Grep: find a word inside the folder
 keymap("n", "<c-g>", ":Telescope live_grep<CR>", opts)

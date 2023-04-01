@@ -12,6 +12,7 @@ local servers = {
   "cssls",
   "graphql",
   "cssmodules_ls",
+  "rust_analyzer",
   "html",
   "dockerls",
   "jsonls",

@@ -1,9 +1,9 @@
--- instalar tjdevries/colorbuddy.nvim 
+require "user.plugins"
 require "user.luasnip"
 require "user.colorscheme"
+require "user.quickscope"
 require "user.lualine"
 require "user.options"
-require "user.plugins"
 require "user.cmp"
 require "user.functions"
 require "user.telescope"
@@ -11,7 +11,6 @@ require "user.autocommands"
 require "user.keymaps"
 require "user.comment"
 require "user.autopairs"
-require "user.quickscope"
 require "user.emmet"
 require "user.illuminate"
 require "user.treesitter"
@@ -24,22 +23,16 @@ require "user.cokeline"
 require "user.lsp"
 require "user.sneak"
 require "user.todo-comments"
---[[ require "user.nvim-notify" ]]
---[[ require "user.leap" ]]
---[[ require "user.bufferline" ]]
+require "user.navbuddy"
+--[[ require "user.whichkey" ]]
 
 -- require('colorbuddy').colorscheme('cobalt2')
 -- Delete ^M
 -- :%s/\r//g 
 -- asdf ^M
--- asdf^M
--- asdf ^M
--- asdf ^M
--- asdf^M
--- asdf^M
 
 --[[ vim.api.nvim_create_user_command("Deletem", function() ]]
---[[   vim.cmd [[command! :%s/\r//g]] 
+--[[   vim.cmd [[command! :%s/\r//g]]
 --[[ end, { nargs = "*" }) ]]
 
 function _G.deletem()
@@ -50,3 +43,12 @@ vim.api.nvim_create_user_command("Deletem", function()
   deletem()
 end, { nargs = "*" })
 
+
+--[[ local old_notify = vim.notify ]]
+--[[ local silence_pat = '[lspconfig] cmd ("cargo' ]]
+--[[ vim.notify = function(msg, level, opts) ]]
+--[[ 	if (string.sub(msg, 1, string.len(silence_pat)) ~= silence_pat) ]]
+--[[ 	then ]]
+--[[ 		old_notify(msg, level, opts) ]]
+--[[ 	end ]]
+--[[ end ]]

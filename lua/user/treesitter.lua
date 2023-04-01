@@ -21,7 +21,7 @@ configs.setup {
   autopairs = {
     enable = true,
   },
-  indent = { enable = true, disable = { "javascript", "css", "typescript" } },
+  indent = { enable = true, disable = { "javascript", "css", "typescript", "rust" } },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
