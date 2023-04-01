@@ -51,24 +51,24 @@ local opts = {}
 
 for _, server in pairs(servers) do
   opts = {
-    on_attach = require("user.lsp.handlers").on_attach,
-    capabilities = require("user.lsp.handlers").capabilities,
+    on_attach = require("core.plugin_config.lsp.handlers").on_attach,
+    capabilities = require("core.plugin_config.lsp.handlers").capabilities,
   }
 
   server = vim.split(server, "@")[1]
 
   --[[ if server == "emmet_ls" then ]]
-  --[[   local emmet_ls_opts = require "user.lsp.settings.emmet_ls" ]]
+  --[[   local emmet_ls_opts = require "lsp.settings.emmet_ls" ]]
   --[[   opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts) ]]
   --[[ end ]]
 
   if server == "lua_ls" then
-    local emmet_ls_opts = require "user.lsp.settings.lua_ls"
+    local emmet_ls_opts = require "core.plugin_config.lsp.settings.lua_ls"
     opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
   end
 
   if server == "html" then
-    local html_opts = require "user.lsp.settings.html"
+    local html_opts = require "core.plugin_config.lsp.settings.html"
     opts = vim.tbl_deep_extend("force", html_opts, opts)
   end
 

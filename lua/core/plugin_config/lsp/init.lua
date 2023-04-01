@@ -25,7 +25,7 @@ M.server_capabilities = function()
 end
 
 --require "user.lsp.lsp-installer"
-require "user.lsp.lsp-signature"
-require("user.lsp.mason")
-require("user.lsp.handlers").setup()
+require "core.plugin_config.lsp.lsp-signature"
+require("core.plugin_config.lsp.mason")
+require("core.plugin_config.lsp.handlers").setup()
 -- require "user.lsp.null-ls"

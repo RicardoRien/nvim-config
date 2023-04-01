@@ -10,7 +10,7 @@ M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
-  local icons = require "user.icons"
+  local icons = require "core.plugin_config.icons"
   local signs = {
 
     { name = "DiagnosticSignError", text = icons.diagnostics.Error },

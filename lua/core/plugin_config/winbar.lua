@@ -68,7 +68,7 @@ end
 --   end
 --
 --   if not require("user.functions").isempty(gps_location) then
---     return require("user.icons").ui.ChevronRight .. " " .. gps_location
+--     return require("core.plugin_config.icons").ui.ChevronRight .. " " .. gps_location
 --   else
 --     return ""
 --   end
