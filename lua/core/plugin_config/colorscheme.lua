@@ -25,8 +25,8 @@ require('onedark').setup {
   ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
   cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
   -- toggle theme style ---
-  toggle_style_key = '<F5>', -- Default keybinding to toggle
-  toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+  -- toggle_style_key = '<F5>', -- Default keybinding to toggle
+  -- toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
 
   -- Change code style ---
   -- Options are italic, bold, underline, none
@@ -56,7 +56,7 @@ require("tokyonight").setup({
   -- or leave it empty to use the default settings
   style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
   light_style = "day", -- The theme is used when the background is set to light
-  transparent = false, -- Enable this to disable setting the background color
+  transparent = true, -- Enable this to disable setting the background color
   terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
   styles = {
     -- Style to be applied to different syntax groups
@@ -66,8 +66,10 @@ require("tokyonight").setup({
     functions = {},
     variables = {},
     -- Background styles. Can be "dark", "transparent" or "normal"
-    sidebars = "dark", -- style for sidebars, see below
-    floats = "dark", -- style for floating windows
+    -- sidebars = "dark", -- style for sidebars, see below
+    -- floats = "dark", -- style for floating windows
+    sidebars = "transparent",
+    floats = "transparent",
   },
   sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
   day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
@@ -88,7 +90,7 @@ require("tokyonight").setup({
 })
 
 -- require('onedark').load()
-require('tokyonight').load() 
+require('tokyonight').load()
 --require('cobal2').load()
 --[[ require('user.colorscheme.neosolarizedrc').load() ]]
 

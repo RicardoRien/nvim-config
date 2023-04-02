@@ -25,18 +25,26 @@ Try to convert this in a command script:
 -- :%s/\r//g  |
 ==============|
 
-It's an adventure of learning.
+Neovim it's an adventure of learning.
+At this point you have two options
 
-You can start from here (Yeah, it's the author of LunarVim but teaching us how to custom our own shit)
+You can start from here (Yeah, it's the author of LunarVim but teaching us how to custom our own stuff)
 Please, follow this steps:
 Install Neovim from source:
-https://www.youtube.com/watch?v=Vghglz2oR0c&t=483s (Like first 20 min, you don't have to watch all the videos) (please, we are in nvim 0.8, choose the correct brach and compile)
+(We are in nvim 0.8, choose the correct brach and compile)
+(Like first 20 min, you don't have to watch all the video)
+https://www.youtube.com/watch?v=Vghglz2oR0c&t=483s 
 
+[Outdated but usefull to watch]
 Check this series of videos about how to order your folders and config basic stuff
 (But please, be aware, some things are outdate, just check Christ repo, go to the file copy and paste)
 https://github.com/ChristianChiarulli/nvim
 
 https://www.youtube.com/watch?v=ctH-a-1eUME
+
+Follow this folder structure-config:
+https://github.com/cpow/cpow-dotfiles
+based on @typecraft on YouTube
 
 Also check his videos about Rust.
 Good luck.

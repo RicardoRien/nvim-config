@@ -13,34 +13,47 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 -- Install your plugins here:
-  'unblevable/quick-scope', -- Easy movement with 's' find 2 coincidenses
-  'nvim-lua/popup.nvim', -- An implementation of the Popup API from vim in Neovim
-  'nvim-lua/plenary.nvim', -- Useful lua functions used ny lots of plugins
-  'windwp/nvim-autopairs', -- Autopairs, integrates with both cmp and treesitter
-  'numToStr/Comment.nvim', -- Easily comment stuff
+  {
+    'unblevable/quick-scope' , -- Easy movement with f, F.
+    init = function()
+      vim.cmd([[
+        " Trigger a highlight in the appropriate direction when pressing these keys:
+        let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+        highlight QuickScopePrimary guifg='#00C7DF' gui=underline ctermfg=155 cterm=underline
+        highlight QuickScopeSecondary guifg='#afff5f' gui=underline ctermfg=81 cterm=underline
+
+        let g:qs_max_chars=150
+      ]])
+    end
+  },
+  {
+    'justinmk/vim-sneak', -- Easy movement with 's' find 2 coincidenses
+      init = function()
+        vim.cmd([[
+          let g:sneak#label = 1
+          " case insensitive sneak
+          let g:sneak#use_ic_scs = 1
+          " immediately move to the next instance of search, if you move the cursor sneak is back to default behavior
+          let g:sneak#s_next = 1
+          " remap so I can use , and ; with f and t
+          map gS <Plug>Sneak_,
+          map gs <Plug>Sneak_;
+          " Change the colors
+          highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
+          highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
+        ]])
+      end
+  },
   {
     'folke/todo-comments.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
   },
-  'kyazdani42/nvim-web-devicons', -- Cool loking icons
-  'kyazdani42/nvim-tree.lua', -- Folder-tree navigation
-  'akinsho/toggleterm.nvim', -- Terminal floating window
-  'noib3/nvim-cokeline', -- Beauty tabs-buffer
-  'moll/vim-bbye', -- Easy close buffe. <leader> + d
-  'justinmk/vim-sneak', -- Easy movement with f, F.
-  'tpope/vim-surround', -- Surround words with '' () {}
-  'nvim-lualine/lualine.nvim', -- Status bar
-  'mattn/emmet-vim', -- Emmet [HTML & CSS autocomplete]
-  'styled-components/vim-styled-components', -- React Styled Components
-  'ThePrimeagen/harpoon', -- The ThePrimeagen Mark Plug
-  'ahmedkhalf/project.nvim',
-  'nvim-zh/colorful-winsep.nvim', -- To put color in the border of the windows
-  { 'akinsho/git-conflict.nvim', config = function()
-    require('git-conflict').setup()
-  end
+  {
+    'akinsho/git-conflict.nvim', config = function()
+       require('git-conflict').setup()
+     end
   },
-  'goolord/alpha-nvim', -- Main dashboard
-  'RRethy/vim-illuminate', -- highlight words when are under the cursor
   {
     'AckslD/nvim-neoclip.lua',
     dependencies = {
@@ -60,8 +73,6 @@ local plugins = {
       'MunifTanjim/nui.nvim',
     }
   }),
-  'pantharshit00/vim-prisma', -- Prisma ORM
-  'sbdchd/neoformat', -- Plugin for formatting code 
   -- Navbuddy
   -- Popup display that provides breadcrumbs like navigation feature
   -- but in keyboard centric manner inspired by ranger file manager.
@@ -71,8 +82,29 @@ local plugins = {
       'neovim/nvim-lspconfig',
       'SmiteshP/nvim-navic',
       'MunifTanjim/nui.nvim'
-    }
+    },
+    lazy = true
   },
+  'nvim-lua/popup.nvim', -- An implementation of the Popup API from vim in Neovim
+  'nvim-lua/plenary.nvim', -- Useful lua functions used ny lots of plugins
+  'windwp/nvim-autopairs', -- Autopairs, integrates with both cmp and treesitter
+  'numToStr/Comment.nvim', -- Easily comment stuff
+  'kyazdani42/nvim-web-devicons', -- Cool loking icons
+  'kyazdani42/nvim-tree.lua', -- Folder-tree navigation
+  'akinsho/toggleterm.nvim', -- Terminal floating window
+  'noib3/nvim-cokeline', -- Beauty tabs-buffer
+  'moll/vim-bbye', -- Easy close buffe. <leader> + d
+  'tpope/vim-surround', -- Surround words with '' () {}
+  'nvim-lualine/lualine.nvim', -- Status bar
+  'mattn/emmet-vim', -- Emmet [HTML & CSS autocomplete]
+  'styled-components/vim-styled-components', -- React Styled Components
+  'ThePrimeagen/harpoon', -- The ThePrimeagen Mark Plug
+  'ahmedkhalf/project.nvim',
+  'nvim-zh/colorful-winsep.nvim', -- To put color in the border of the windows
+  'goolord/alpha-nvim', -- Main dashboard
+  'RRethy/vim-illuminate', -- highlight words when are under the cursor
+  'pantharshit00/vim-prisma', -- Prisma ORM
+  'sbdchd/neoformat', -- Plugin for formatting code 
   -- Docs for Noevim keys
   --[[ { ]]
   --[[   'folke/which-key.nvim', ]]
@@ -99,9 +131,9 @@ local plugins = {
   },
 
   -- cmp plugins
-  'hrsh7th/nvim-cmp', -- The completion plugin
-  'hrsh7th/cmp-buffer', -- buffer completions
-  'hrsh7th/cmp-path', -- path completions
+  { 'hrsh7th/nvim-cmp', lazy = true }, -- The completion plugin
+  { 'hrsh7th/cmp-buffer', lazy = true }, -- buffer completions
+  { 'hrsh7th/cmp-path', lazy = true }, -- path completions
   'hrsh7th/cmp-cmdline', -- cmdline completions
   'saadparwaiz1/cmp_luasnip', -- snippet completions
   'hrsh7th/cmp-nvim-lsp',
@@ -114,14 +146,20 @@ local plugins = {
 
   -- LSP
   'neovim/nvim-lspconfig', -- enable LSP
-  'williamboman/mason-lspconfig.nvim',
+  {
+    'williamboman/mason-lspconfig.nvim',
+    lazy = true
+  },
   { 'williamboman/mason.nvim' },
-  --[[ 'williamboman/nvim-lsp-installer' -- simple to language server installer ]]
   'simrat39/symbols-outline.nvim',
   'ray-x/lsp_signature.nvim',
 
   -- Telescope
-  'nvim-telescope/telescope.nvim',
+  {
+    'nvim-telescope/telescope.nvim',
+    lazy = true,
+    cmd = "Telescope"
+  },
   'tom-anders/telescope-vim-bookmarks.nvim',
   'nvim-telescope/telescope-media-files.nvim',
   'nvim-telescope/telescope-ui-select.nvim',
@@ -137,4 +175,3 @@ local plugins = {
 local opts = {}
 
 require("lazy").setup(plugins, opts)
-

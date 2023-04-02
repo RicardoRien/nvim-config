@@ -1,5 +1,5 @@
 require("core.plugin_config.quickscope")
-require("core.plugin_config.luasnip")
+-- require("core.plugin_config.luasnip")
 require("core.plugin_config.colorscheme")
 require("core.plugin_config.lualine")
 require("core.plugin_config.cmp")

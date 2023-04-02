@@ -21,11 +21,6 @@ nvim_tree.setup {
   -- },
   -- disable_netrw = true,
   -- hijack_netrw = true,
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
-  },
   filters = {
     custom = { ".git" },
     exclude = { ".gitignore", ".env" },
