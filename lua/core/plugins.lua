@@ -45,6 +45,16 @@ local plugins = {
         ]])
       end
   },
+  { -- Emmet [HTML & CSS autocomplete]
+    'mattn/emmet-vim',
+    init = function()
+      vim.cmd([[
+        let g:user_emmet_mode='n' " only enable normal mode functions
+        let g:user_emmet_leader_key=','
+        " autocmd FileType html,css,javascript.jsx EmmetInstall
+      ]])
+    end,
+  },
   {
     'folke/todo-comments.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
@@ -96,7 +106,6 @@ local plugins = {
   'moll/vim-bbye', -- Easy close buffe. <leader> + d
   'tpope/vim-surround', -- Surround words with '' () {}
   'nvim-lualine/lualine.nvim', -- Status bar
-  'mattn/emmet-vim', -- Emmet [HTML & CSS autocomplete]
   'styled-components/vim-styled-components', -- React Styled Components
   'ThePrimeagen/harpoon', -- The ThePrimeagen Mark Plug
   'ahmedkhalf/project.nvim',
@@ -104,7 +113,6 @@ local plugins = {
   'goolord/alpha-nvim', -- Main dashboard
   'RRethy/vim-illuminate', -- highlight words when are under the cursor
   'pantharshit00/vim-prisma', -- Prisma ORM
-  'sbdchd/neoformat', -- Plugin for formatting code 
   -- Docs for Noevim keys
   --[[ { ]]
   --[[   'folke/which-key.nvim', ]]
