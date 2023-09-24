@@ -9,6 +9,18 @@ end
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
+-- Specify how the border looks like
+local border = {
+    { '┌', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '┐', 'FloatBorder' },
+    { '│', 'FloatBorder' },
+    { '┘', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '└', 'FloatBorder' },
+    { '│', 'FloatBorder' },
+}
+
 M.setup = function()
   local icons = require "core.plugin_config.icons"
   local signs = {
@@ -26,6 +38,9 @@ M.setup = function()
   local config = {
     -- disable virtual text
     virtual_text = false,
+    --[[ virtual_text = { ]]
+    --[[     prefix = '■', -- Could be '●', '▎', 'x', '■', ,  ]]
+    --[[ }, ]]
     -- show signs
     signs = {
       active = signs,
@@ -33,15 +48,19 @@ M.setup = function()
     update_in_insert = true,
     underline = true,
     severity_sort = true,
+    --[[ float = { ]]
+    --[[   focusable = true, ]]
+    --[[   style = "minimal", ]]
+    --[[   border = "rounded", ]]
+    --[[   source = "always", ]]
+    --[[   header = "", ]]
+    --[[   prefix = "", ]]
+    --[[   -- width = 40, ]]
+    --[[ }, ]]
     float = {
-      focusable = true,
-      style = "minimal",
-      border = "rounded",
-      source = "always",
-      header = "",
-      prefix = "",
-      -- width = 40,
-    },
+      border = border,
+      focusable = true
+    }
   }
 
   vim.diagnostic.config(config)

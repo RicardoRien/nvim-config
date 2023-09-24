@@ -12,6 +12,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- Navbuddy
+  -- Popup display that provides breadcrumbs like navigation feature
+  -- but in keyboard centric manner inspired by ranger file manager.
+  {
+    'SmiteshP/nvim-navbuddy',
+    dependencies = {
+      'neovim/nvim-lspconfig',
+      'SmiteshP/nvim-navic',
+      'MunifTanjim/nui.nvim'
+    }
+  },
 -- Install your plugins here:
   'unblevable/quick-scope', -- Easy movement with 's' find 2 coincidenses
   'nvim-lua/popup.nvim', -- An implementation of the Popup API from vim in Neovim
@@ -23,9 +34,7 @@ local plugins = {
     dependencies = 'nvim-lua/plenary.nvim',
   },
   'kyazdani42/nvim-web-devicons', -- Cool loking icons
-  'kyazdani42/nvim-tree.lua', -- Folder-tree navigation
   'akinsho/toggleterm.nvim', -- Terminal floating window
-  'noib3/nvim-cokeline', -- Beauty tabs-buffer
   'moll/vim-bbye', -- Easy close buffe. <leader> + d
   'justinmk/vim-sneak', -- Easy movement with f, F.
   'tpope/vim-surround', -- Surround words with '' () {}
@@ -62,17 +71,6 @@ local plugins = {
   }),
   'pantharshit00/vim-prisma', -- Prisma ORM
   'sbdchd/neoformat', -- Plugin for formatting code 
-  -- Navbuddy
-  -- Popup display that provides breadcrumbs like navigation feature
-  -- but in keyboard centric manner inspired by ranger file manager.
-  {
-    'SmiteshP/nvim-navbuddy',
-    dependencies = {
-      'neovim/nvim-lspconfig',
-      'SmiteshP/nvim-navic',
-      'MunifTanjim/nui.nvim'
-    }
-  },
   -- Docs for Noevim keys
   --[[ { ]]
   --[[   'folke/which-key.nvim', ]]

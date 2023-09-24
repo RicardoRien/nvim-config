@@ -15,6 +15,7 @@ require("core.plugin_config.toggleterm")
 require("core.plugin_config.alpha")
 require("core.plugin_config.colorful-winsep")
 require("core.plugin_config.cokeline")
+--[[ require("core.plugin_config.bufferline") ]]
 require("core.plugin_config.lsp")
 require("core.plugin_config.todo-comments")
 require("core.plugin_config.navbuddy")

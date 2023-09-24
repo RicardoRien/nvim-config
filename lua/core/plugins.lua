@@ -87,22 +87,37 @@ local plugins = {
   -- Popup display that provides breadcrumbs like navigation feature
   -- but in keyboard centric manner inspired by ranger file manager.
   {
-    'SmiteshP/nvim-navbuddy',
+    "neovim/nvim-lspconfig",
+    branch = "master",
+    commit = "f137a3466a6cd1965cdcc5398daff54e66eebbe5",
     dependencies = {
-      'neovim/nvim-lspconfig',
-      'SmiteshP/nvim-navic',
-      'MunifTanjim/nui.nvim'
+        {
+            "SmiteshP/nvim-navbuddy",
+            dependencies = {
+                "SmiteshP/nvim-navic",
+                "MunifTanjim/nui.nvim"
+            },
+            opts = { lsp = { auto_attach = true } }
+        }
     },
     lazy = true
   },
+  {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
   'nvim-lua/popup.nvim', -- An implementation of the Popup API from vim in Neovim
   'nvim-lua/plenary.nvim', -- Useful lua functions used ny lots of plugins
   'windwp/nvim-autopairs', -- Autopairs, integrates with both cmp and treesitter
   'numToStr/Comment.nvim', -- Easily comment stuff
-  'kyazdani42/nvim-web-devicons', -- Cool loking icons
-  'kyazdani42/nvim-tree.lua', -- Folder-tree navigation
+  'nvim-tree/nvim-tree.lua' , -- Folder-tree navigation
+  'nvim-tree/nvim-web-devicons', -- Cool loking icons
   'akinsho/toggleterm.nvim', -- Terminal floating window
-  'noib3/nvim-cokeline', -- Beauty tabs-buffer
+  {
+    "willothy/nvim-cokeline", tag = "v0.4.0", commit = "904dc18d017cdf5c7c52a6455fd2a8d6f9a8bc3b",
+    dependencies = {
+      "nvim-lua/plenary.nvim",        -- Required for v0.4.0+
+      "nvim-tree/nvim-web-devicons", -- If you want devicons
+    },
+    config = true
+  },
   'moll/vim-bbye', -- Easy close buffe. <leader> + d
   'tpope/vim-surround', -- Surround words with '' () {}
   'nvim-lualine/lualine.nvim', -- Status bar
@@ -131,6 +146,7 @@ local plugins = {
   -- 'lunarvim/darkplus.nvim'
   'navarasu/onedark.nvim',
   'folke/tokyonight.nvim',
+  { "catppuccin/nvim", name = "catppuccin" },
   { 'lalitmee/cobalt2.nvim', dependencies = 'tjdevries/colorbuddy.nvim' },
   { 'ellisonleao/gruvbox.nvim' },
   {
@@ -139,9 +155,9 @@ local plugins = {
   },
 
   -- cmp plugins
-  { 'hrsh7th/nvim-cmp', lazy = true }, -- The completion plugin
-  { 'hrsh7th/cmp-buffer', lazy = true }, -- buffer completions
-  { 'hrsh7th/cmp-path', lazy = true }, -- path completions
+  { 'hrsh7th/nvim-cmp' }, -- The completion plugin
+  { 'hrsh7th/cmp-buffer' }, -- buffer completions
+  { 'hrsh7th/cmp-path' }, -- path completions
   'hrsh7th/cmp-cmdline', -- cmdline completions
   'saadparwaiz1/cmp_luasnip', -- snippet completions
   'hrsh7th/cmp-nvim-lsp',
@@ -156,7 +172,6 @@ local plugins = {
   'neovim/nvim-lspconfig', -- enable LSP
   {
     'williamboman/mason-lspconfig.nvim',
-    lazy = true
   },
   { 'williamboman/mason.nvim' },
   'simrat39/symbols-outline.nvim',
@@ -176,7 +191,7 @@ local plugins = {
   -- Treesitter
   'nvim-treesitter/nvim-treesitter',
   'JoosepAlviste/nvim-ts-context-commentstring',
-  'p00f/nvim-ts-rainbow',
+  'hiphish/rainbow-delimiters.nvim',
   'windwp/nvim-ts-autotag',
 }
 
