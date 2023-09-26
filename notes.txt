@@ -1,9 +1,10 @@
+This is useless (old stuff, delete): nvim/lua/core/plugin_config/plugins.lua
+
 =======================================================================|
 if treesitter/highlighter: Error executing lua problem in Neovim config|
 just command:                                                          |
 :TSUpdate                                                              |
 =======================================================================|
-
 
 ===========================================================================|
 Try to convert this in a command script, executable every time I save file |
@@ -19,32 +20,7 @@ Try to convert this in a command script:
 ------------------------------------------------                           |
 ===========================================================================|
 
-
 ==============|
 -- Delete ^M  |
 -- :%s/\r//g  |
 ==============|
-
-Neovim it's an adventure of learning.
-At this point you have two options
-
-You can start from here (Yeah, it's the author of LunarVim but teaching us how to custom our own stuff)
-Please, follow this steps:
-Install Neovim from source:
-(We are in nvim 0.8, choose the correct brach and compile)
-(Like first 20 min, you don't have to watch all the video)
-https://www.youtube.com/watch?v=Vghglz2oR0c&t=483s 
-
-[Outdated but usefull to watch]
-Check this series of videos about how to order your folders and config basic stuff
-(But please, be aware, some things are outdate, just check Christ repo, go to the file copy and paste)
-https://github.com/ChristianChiarulli/nvim
-
-https://www.youtube.com/watch?v=ctH-a-1eUME
-
-Follow this folder structure-config:
-https://github.com/cpow/cpow-dotfiles
-based on @typecraft on YouTube
-
-Also check his videos about Rust.
-Good luck.

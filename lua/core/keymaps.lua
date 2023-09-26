@@ -128,6 +128,10 @@ keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require
 -- Live Grep: find a word inside the folder
 keymap("n", "<c-g>", ":Telescope live_grep<CR>", opts)
 
+keymap("n", "<c-f>", ":Navbuddy<CR>", opts)
+
+keymap("n", "<c-c>", ":Telescope neoclip<CR>", opts)
+
 -- Nvimtree
 keymap("n", "<leader>n", ":NvimTreeToggle<cr>", opts)
 

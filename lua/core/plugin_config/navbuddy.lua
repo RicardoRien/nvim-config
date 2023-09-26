@@ -3,7 +3,7 @@ local actions = require("nvim-navbuddy.actions")
 
 navbuddy.setup {
     window = {
-        border = "double",  -- "rounded", "double", "solid", "none"
+        border = "rounded",  -- "rounded", "double", "solid", "none"
                             -- or an array with eight chars building up the border in a clockwise fashion
                             -- starting with the top-left corner. eg: { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" }.
         size = "80%",       -- Or table format example: { height = "40%", width = "100%"}
@@ -32,12 +32,12 @@ navbuddy.setup {
         icons = {
             leaf = "  ",
             leaf_selected = " → ",
-            branch = " ",
+            branch = " ",
         },
     },
     icons = {
         File          = "󰈙 ",
-        Module        = " ",
+        Module        = " ",
         Namespace     = "󰌗 ",
         Package       = " ",
         Class         = "󰌗 ",
@@ -49,10 +49,10 @@ navbuddy.setup {
         Interface     = "󰕘",
         Function      = "󰊕 ",
         Variable      = "󰆧 ",
-        Constant      = "󰏿 ",
-        String        = " ",
+        Constant      = " ",
+        String        = " ",
         Number        = "󰎠 ",
-        Boolean       = "◩ ",
+        Boolean       = " ",
         Array         = "󰅪 ",
         Object        = "󰅩 ",
         Key           = "󰌋 ",
