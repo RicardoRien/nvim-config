@@ -9,19 +9,24 @@ if not status_ok_1 then
 end
 
 local servers = {
-  "cssls",
-  "graphql",
-  "cssmodules_ls",
-  "rust_analyzer",
   "html",
-  "dockerls",
-  "jsonls",
+  "cssls",
   "lua_ls",
   "tsserver",
   "pyright",
+  "csharp_ls",
+  "gopls",
+  "graphql",
+  "cssmodules_ls",
+  "rust_analyzer",
+  "dockerls",
+  "jsonls",
   "prismals",
   "yamlls"
 }
+-- TODO: For python (config later...)
+-- "black",
+-- "flake8",
 
 local settings = {
   ui = {
@@ -57,10 +62,10 @@ for _, server in pairs(servers) do
 
   server = vim.split(server, "@")[1]
 
-  --[[ if server == "emmet_ls" then ]]
-  --[[   local emmet_ls_opts = require "lsp.settings.emmet_ls" ]]
-  --[[   opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts) ]]
-  --[[ end ]]
+  -- if server == "emmet_ls" then
+    -- local emmet_ls_opts = require "lsp.settings.emmet_ls"
+    -- opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
+  -- end
 
   if server == "lua_ls" then
     local emmet_ls_opts = require "core.plugin_config.lsp.settings.lua_ls"
@@ -72,9 +77,16 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", html_opts, opts)
   end
 
+  if server == "gopls" then
+    local gopls_opts = require "core.plugin_config.lsp.settings.gopls"
+    opts = vim.tbl_deep_extend("force", gopls_opts, opts)
+  end
+
+  -- if server == "pyright" then
+    -- local pyright_opts = require "core.plugin_config.lsp.settings.pyright"
+    -- opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+  -- end
+
   lspconfig[server].setup(opts)
   ::continue::
 end
-
--- TODO: add something to installer later
--- require("lspconfig").motoko.setup {}

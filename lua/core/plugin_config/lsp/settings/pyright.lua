@@ -3,6 +3,8 @@ return {
     python = {
       analysis = {
         typeCheckingMode = "off",
+        --[[ typeCheckingMode = "strict", ]]
+        --[[ reportUnusedVariable = "strict" ]]
       },
     },
   },

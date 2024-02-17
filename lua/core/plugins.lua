@@ -193,6 +193,9 @@ local plugins = {
   'JoosepAlviste/nvim-ts-context-commentstring',
   'hiphish/rainbow-delimiters.nvim',
   'windwp/nvim-ts-autotag',
+
+  -- Copilot
+  --[[ 'github/copilot.vim' ]]
 }
 
 local opts = {}

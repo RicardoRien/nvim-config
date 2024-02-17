@@ -39,6 +39,7 @@ local options = {
 }
 
 vim.opt.shortmess:append "c"
+vim.g.editorconfig = true                      -- Accept editor config files. Auto accept tab width.
 
 for k, v in pairs(options) do
   vim.opt[k] = v

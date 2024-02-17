@@ -9,7 +9,7 @@ local icons = require('core.plugin_config.icons')
 
 telescope.setup {
   defaults = {
-    file_ignore_patterns = {"node_modules", "package-lock", "yarn.lock", "build", "graphql.schema.json"},
+    file_ignore_patterns = {"node_modules", "package-lock", "yarn.lock", "build", "graphql.schema.json", "env"},
     prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
     path_display = { "smart" },

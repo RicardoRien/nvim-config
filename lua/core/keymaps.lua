@@ -121,6 +121,10 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Copilot
+-- Find better map (this use TAB)
+--[[ keymap("i", "<C-c>", "copilot#Accept('<CR>')", { expr=true, silent=true }) ]]
+  
 -- Telescope
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>1", "<cmd>Telescope diagnostics<cr>", opts)
@@ -153,3 +157,4 @@ vim.cmd [[command! Q :q]]
 
 --[[ vim.keymap.set('n', 'v', 'mav', { noremap = true }) ]]
 --[[ vim.keymap.set('v', '<Esc>', "<Esc>`a", { noremap = true, silent = true }) ]]
+

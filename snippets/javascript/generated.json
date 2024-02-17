@@ -27,5 +27,39 @@
     ],
     "description": "Creates an export arrow function",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "createReduxSlice": {
+    "key": "reduxSlice",
+    "prefix": "reduxSlice",
+		"body": [
+			"import { createSlice } from '@reduxjs/toolkit';",
+			"",
+			"export const ${1:${TM_FILENAME_BASE}} = createSlice({",
+			"  //nombre del slice con el que se vincula al store",
+			"  name: '${2:name}',",
+			"  //declaracion del estado inicial de las variables",
+			"  initialState: {",
+      "  // state.counter ",
+			"    counter: 0,",
+			"  },",
+			"  //funciones que modifican el estado",
+			"  reducers: {",
+			"    ${3:increment}: (state) => {",
+			"      state.counter += 1;",
+			"    },",
+			"    decrement: (state) => {",
+			"      state.counter -= 1;",
+			"    },",
+			"    // incremeta por una cantidad dada",
+			"    incrementByAmount: (state, action) => {",
+			"      state.counter += action.payload;",
+			"    },",
+			"  },",
+			"});",
+			"",
+			"export const { increment, decrement, incrementByAmount } = ${1:${TM_FILENAME_BASE}}.actions;"
+		],
+    "description": "Create Redux Slice",
+    "scope": "javascript"
   }
 }

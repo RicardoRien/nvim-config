@@ -249,9 +249,8 @@
   },
   "reactArrowFunctionComponent": {
     "key": "reactArrowFunctionComponent",
-    "prefix": "rafc",
+    "prefix": ["rafc", "rfc"],
     "body": [
-      "import React from 'react'",
       "",
       "export const ${1:${TM_FILENAME_BASE}} = () => {",
       "  return (",
@@ -260,14 +259,13 @@
       "}",
       ""
     ],
-    "description": "Creates a React Arrow Function Component with ES7 module system",
+    "description": "Creates a React Arrow Function Component.",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "reactArrowFunctionComponentWithPropTypes": {
     "key": "reactArrowFunctionComponentWithPropTypes",
     "prefix": "rafcp",
     "body": [
-      "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
       "const ${1:${TM_FILENAME_BASE}} = props => {",
@@ -287,7 +285,6 @@
     "key": "reactArrowFunctionExportComponent",
     "prefix": "rafce",
     "body": [
-      "import React from 'react'",
       "",
       "const ${1:${TM_FILENAME_BASE}} = () => {",
       "  return (",
@@ -337,59 +334,6 @@
       ""
     ],
     "description": "Creates a React component class with PropTypes and ES7 module system",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactClassComponentRedux": {
-    "key": "reactClassComponentRedux",
-    "prefix": "rcredux",
-    "body": [
-      "import React, { Component } from 'react'",
-      "import { connect } from 'react-redux'",
-      "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
-      "  render() {",
-      "    return (",
-      "      <div>${1:first}</div>",
-      "    )",
-      "  }",
-      "}",
-      "",
-      "const mapStateToProps = (state) => ({})",
-      "",
-      "const mapDispatchToProps = {}",
-      "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
-    ],
-    "description": "Creates a React component class with connected redux and ES7 module system",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactClassComponentReduxPropTypes": {
-    "key": "reactClassComponentReduxPropTypes",
-    "prefix": "rcreduxp",
-    "body": [
-      "import PropTypes from 'prop-types'",
-      "import React, { Component } from 'react'",
-      "import { connect } from 'react-redux'",
-      "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
-      "  static propTypes = {",
-      "    ${2:second}: ${3:third}",
-      "  }",
-      "",
-      "  render() {",
-      "    return (",
-      "      <div>${1:first}</div>",
-      "    )",
-      "  }",
-      "}",
-      "",
-      "const mapStateToProps = (state) => ({})",
-      "",
-      "const mapDispatchToProps = {}",
-      "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
-    ],
-    "description": "Creates a React component class with PropTypes with connected redux and ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "reactClassExportComponent": {
@@ -526,71 +470,6 @@
       "export default ${1:${TM_FILENAME_BASE}}"
     ],
     "description": "Creates a React Memo Function Component with ES7 module system with PropTypes",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactFunctionalComponent": {
-    "key": "reactFunctionalComponent",
-    "prefix": "rfc",
-    "body": [
-      "import React from 'react'",
-      "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "}",
-      ""
-    ],
-    "description": "Creates a React Functional Component with ES7 module system",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactFunctionalComponentRedux": {
-    "key": "reactFunctionalComponentRedux",
-    "prefix": "rfcredux",
-    "body": [
-      "import React from 'react'",
-      "import { connect } from 'react-redux'",
-      "",
-      "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "}",
-      "",
-      "const mapStateToProps = (state) => ({})",
-      "",
-      "const mapDispatchToProps = {}",
-      "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
-    ],
-    "description": "Creates a React functional component with connected redux and ES7 module system",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reactFunctionalComponentReduxPropTypes": {
-    "key": "reactFunctionalComponentReduxPropTypes",
-    "prefix": "rfcreduxp",
-    "body": [
-      "import PropTypes from 'prop-types'",
-      "import React from 'react'",
-      "import { connect } from 'react-redux'",
-      "",
-      "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "}",
-      "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {",
-      "  ${2:second}: PropTypes.${3:third}",
-      "}",
-      "",
-      "const mapStateToProps = (state) => ({})",
-      "",
-      "const mapDispatchToProps = {}",
-      "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
-    ],
-    "description": "DEPRECATED: Creates a React functional component with PropTypes with connected redux and ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "reactFunctionalComponentWithPropTypes": {
@@ -1375,82 +1254,6 @@
     "body": ["const styles = StyleSheet.create({${1:first}})"],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
-  "importReduxConnect": {
-    "key": "importReduxConnect",
-    "prefix": "redux",
-    "body": ["import { connect } from 'react-redux'"],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reduxAction": {
-    "key": "reduxAction",
-    "prefix": "rxaction",
-    "body": [
-      "export const ${1:first} = (payload) => ({",
-      "  type: ${2:second},",
-      "  payload",
-      "})",
-      ""
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reduxConst": {
-    "key": "reduxConst",
-    "prefix": "rxconst",
-    "body": ["export const ${1:first} = '${1:first}'"],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reduxReducer": {
-    "key": "reduxReducer",
-    "prefix": "rxreducer",
-    "body": [
-      "const initialState = {}",
-      "",
-      "export default (state = initialState, { type, payload }) => {",
-      "  switch (type) {",
-      "",
-      "  case ${1:first}:",
-      "    return { ...state, ...payload }",
-      "",
-      "  default:",
-      "    return state",
-      "  }",
-      "}",
-      ""
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reduxSelector": {
-    "key": "reduxSelector",
-    "prefix": "rxselect",
-    "body": [
-      "import { createSelector } from 'reselect'",
-      "",
-      "export const ${1:first} = state => state.${2:second}"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "reduxSlice": {
-    "key": "reduxSlice",
-    "prefix": "rxslice",
-    "body": [
-      "import { createSlice } from '@reduxjs/toolkit'",
-      "",
-      "const initialState = {",
-      "",
-      "}",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = createSlice({",
-      "  name: ${2:second},",
-      "  initialState,",
-      "  reducers: {}",
-      "});",
-      "",
-      "export const {} = ${1:${TM_FILENAME_BASE}}.actions",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}.reducer"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
   "mappingToProps": {
     "key": "mappingToProps",
     "prefix": "reduxmap",
@@ -1480,33 +1283,6 @@
     "prefix": "tit",
     "body": ["it('should ${1:first}', () => { ${2:second} })"],
     "description": "Testing `it` block",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "setupReactComponentTestWithRedux": {
-    "key": "setupReactComponentTestWithRedux",
-    "prefix": "srtest",
-    "body": [
-      "import React from 'react'",
-      "import renderer from 'react-test-renderer'",
-      "import { Provider } from 'react-redux'",
-      "",
-      "import store from '~/store'",
-      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
-      "",
-      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
-      "  const defaultProps = {}",
-      "  const wrapper = renderer.create(",
-      "    <Provider store={store}>",
-      "     <${1:${TM_FILENAME_BASE}} {...defaultProps} />",
-      "    </Provider>,",
-      "  )",
-      "",
-      "  test('render', () => {",
-      "    expect(wrapper).toMatchSnapshot()",
-      "  })",
-      "})"
-    ],
-    "description": "Create test component",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "setupReactNativeTest": {
@@ -1923,9 +1699,9 @@
     "key": "interface",
     "prefix": "in",
     "body": [
-     "interface FooBar {",
-     "  foo: bar",
-     "  zap: (event: React.MouseEvent<HTMLElement>) => void,",
+     "interface Props {",
+     "  name: string",
+     "  handleClick: MouseEventHandler,",
      "}"
     ],
     "scope": "typescript,typescriptreact,javascriptreact"
@@ -2019,7 +1795,7 @@
   },
   "const": {
     "key": "const",
-    "prefix": ["c", "co", "con"],
+    "prefix": ["c", "co", "con", "cc"],
     "body": [
       "const "
     ],
@@ -2040,7 +1816,7 @@
     "key": "ternaryOperator",
     "prefix": ["ter", "ternary"],
     "body": [
-      "a == b ? true : false"
+      "true == true ? true : false"
     ],
     "description": "ternary operation",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"

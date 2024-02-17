@@ -61,6 +61,7 @@ todo_comments.setup({
       "--line-number",
       "--column",
       "--glob=!node_modules",
+      "--glob=!env",
       "--glob=!build"
     },
     -- regex that will be used to match keywords.

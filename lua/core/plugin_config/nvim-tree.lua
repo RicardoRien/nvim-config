@@ -5,6 +5,13 @@ local function my_on_attach(bufnr)
     return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
 
+  -- change color for arrows in tree to light blue
+  vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#2AC3DE ]])
+  vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#2AC3DE ]])
+
+  -- transparent
+  -- vim.cmd[[hi NvimTreeNormal guibg=NONE ctermbg=NONE]]
+
   -- default mappings
   api.config.mappings.default_on_attach(bufnr)
 
