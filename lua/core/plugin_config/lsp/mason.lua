@@ -14,15 +14,15 @@ local servers = {
   "lua_ls",
   "tsserver",
   "pyright",
-  "csharp_ls",
-  "gopls",
   "graphql",
   "cssmodules_ls",
   "rust_analyzer",
   "dockerls",
   "jsonls",
   "prismals",
-  "yamlls"
+  "yamlls",
+  --[[ "csharp_ls", ]]
+  --[[ "gopls", ]]
 }
 -- TODO: For python (config later...)
 -- "black",

@@ -59,11 +59,7 @@ local plugins = {
     'folke/todo-comments.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
   },
-  {
-    'akinsho/git-conflict.nvim', config = function()
-       require('git-conflict').setup()
-     end
-  },
+  {'akinsho/git-conflict.nvim', config = true, tag = "v1.3.0"},
   {
     'AckslD/nvim-neoclip.lua',
     dependencies = {

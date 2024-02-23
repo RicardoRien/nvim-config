@@ -647,12 +647,7 @@
     "prefix": "useEffectSnippet",
     "body": [
       "useEffect(() => {",
-      "  ${1:first}",
-      "",
-      "  return () => {",
-      "    ${2:second}",
-      "  }",
-      "}, [${3:third}])",
+      "}, [])",
       ""
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"

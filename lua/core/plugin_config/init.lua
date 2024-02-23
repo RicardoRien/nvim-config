@@ -20,6 +20,7 @@ require("core.plugin_config.lsp")
 require("core.plugin_config.todo-comments")
 require("core.plugin_config.navbuddy")
 require("core.plugin_config.neoclip")
+require("core.plugin_config.git-conflict")
 
 --[[ require("core.plugin_config.quickscope") ]]
 --[[ require("core.plugin_config.emmet") ]]
