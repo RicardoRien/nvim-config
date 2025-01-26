@@ -20,7 +20,6 @@ vim.api.nvim_create_user_command("Deletem", function()
   deletem()
 end, { nargs = "*" })
 
-
 --[[ local old_notify = vim.notify ]]
 --[[ local silence_pat = '[lspconfig] cmd ("cargo' ]]
 --[[ vim.notify = function(msg, level, opts) ]]

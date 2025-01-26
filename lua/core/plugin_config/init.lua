@@ -10,7 +10,6 @@ require("core.plugin_config.autopairs")
 require("core.plugin_config.illuminate")
 require("core.plugin_config.treesitter")
 require("core.plugin_config.nvim-tree")
-require("core.plugin_config.harpoon")
 require("core.plugin_config.toggleterm")
 require("core.plugin_config.alpha")
 require("core.plugin_config.colorful-winsep")
@@ -21,7 +20,13 @@ require("core.plugin_config.todo-comments")
 require("core.plugin_config.navbuddy")
 require("core.plugin_config.neoclip")
 require("core.plugin_config.git-conflict")
+require("core.plugin_config.ts-error-translator")
+require("core.plugin_config.formatter")
+require("core.plugin_config.carbon-now")
+require("core.plugin_config.functions")
+--[[ require("core.plugin_config.ufo") ]]
 
+--[[ require("core.plugin_config.harpoon") ]] --[[ doesn't work ]]
 --[[ require("core.plugin_config.quickscope") ]]
 --[[ require("core.plugin_config.emmet") ]]
 --[[ require("core.plugin_config.sneak") ]]

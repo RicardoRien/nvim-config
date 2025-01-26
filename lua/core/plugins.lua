@@ -55,11 +55,47 @@ local plugins = {
       ]])
     end,
   },
+  --[[ { ]]
+  --[[     "ThePrimeagen/harpoon", ]]
+  --[[     branch = "harpoon2", ]]
+  --[[     dependencies = { "nvim-lua/plenary.nvim" } ]]
+  --[[ }, ]]
+  {
+    "cbochs/grapple.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-tree/nvim-web-devicons", lazy = true
+    },
+    config = function()
+      require("telescope").load_extension("grapple")
+
+      --[[ vim.keymap.set("n", "<c-h>", "<cmd>Telescope grapple tags<cr>") SHOW IN TELESCOPE]]
+      vim.keymap.set("n", "<leader>ha", "<cmd>Grapple tag<cr>")
+      vim.keymap.set("n", "<leader>hh", "<cmd>Grapple open_tags<cr>")
+
+      vim.keymap.set("n", "<leader>hu", "<cmd>Grapple select index=1<cr>")
+      vim.keymap.set("n", "<leader>hi", "<cmd>Grapple select index=2<cr>")
+      vim.keymap.set("n", "<leader>ho", "<cmd>Grapple select index=3<cr>")
+      vim.keymap.set("n", "<leader>hp", "<cmd>Grapple select index=4<cr>")
+
+      -- Toggle previous & next buffers
+      --[[ vim.keymap.set("n", "<C-hn>", "<cmd>Grapple cycle backward<cr>") ]]
+      --[[ vim.keymap.set("n", "<C-hb>", "<cmd>Grapple cycle forward<cr>") ]]
+    end
+  },
   {
     'folke/todo-comments.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
   },
-  {'akinsho/git-conflict.nvim', config = true, tag = "v1.3.0"},
+  {'akinsho/git-conflict.nvim', version = "*", config = true},
+  { 'dmmulroy/ts-error-translator.nvim' },
+  {
+    "ellisonleao/carbon-now.nvim",
+    lazy = true,
+    cmd = "CarbonNow",
+    ---@param opts cn.ConfigSchema
+    opts = { [[ your custom config here ]] }
+  },
   {
     'AckslD/nvim-neoclip.lua',
     dependencies = {
@@ -118,12 +154,30 @@ local plugins = {
   'tpope/vim-surround', -- Surround words with '' () {}
   'nvim-lualine/lualine.nvim', -- Status bar
   'styled-components/vim-styled-components', -- React Styled Components
-  'ThePrimeagen/harpoon', -- The ThePrimeagen Mark Plug
   'ahmedkhalf/project.nvim',
   'nvim-zh/colorful-winsep.nvim', -- To put color in the border of the windows
   'goolord/alpha-nvim', -- Main dashboard
   'RRethy/vim-illuminate', -- highlight words when are under the cursor
   'pantharshit00/vim-prisma', -- Prisma ORM
+  'mhartington/formatter.nvim',
+  --[[ -- Tailwind ~
+    {
+      "luckasRanarison/tailwind-tools.nvim",
+      opts = {
+        document_color = {
+          enabled = true, -- can be toggled by commands
+          kind = "inline", -- "inline" | "foreground" | "background"
+          inline_symbol = "󰝤 ", -- only used in inline mode
+          debounce = 200, -- in milliseconds, only applied in insert mode
+        },
+        conceal = {
+          symbol = "󱏿", -- only a single character is allowed
+          highlight = { -- extmark highlight options, see :h 'highlight'
+            fg = "#38BDF8",
+          },
+        },    } -- your configuration
+    },
+  ]]
   -- Docs for Noevim keys
   --[[ { ]]
   --[[   'folke/which-key.nvim', ]]
@@ -149,6 +203,7 @@ local plugins = {
     'svrana/neosolarized.nvim',
     dependencies = { 'tjdevries/colorbuddy.nvim' }
   },
+  { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
 
   -- cmp plugins
   { 'hrsh7th/nvim-cmp' }, -- The completion plugin

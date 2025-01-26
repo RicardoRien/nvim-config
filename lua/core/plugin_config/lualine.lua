@@ -15,7 +15,15 @@ lualine.setup({
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_b = {
+      'branch',
+      'diff',
+      'diagnostics',
+      {
+        require("grapple").statusline,
+        cond = require("grapple").exists
+      }
+    },
     lualine_c = {{
       'filename',
       path = 1

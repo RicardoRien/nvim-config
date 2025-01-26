@@ -1,0 +1,11 @@
+===============================================================
+Buffers: 
+  If you came from VsCode or Atom basically, it's a Tab. It's
+  a file loaded into the memory. 
+Windows:
+  Ex: you do :vsplit and you have two windows with the same
+  buffer. If you open another open, you have two diferent
+  buffers with two windows open.
+Tab:
+  It's a collection of windows []
+===============================================================

@@ -31,7 +31,8 @@ local config = {
   },
   filters = {
     custom = { ".git" },
-    exclude = { ".gitignore", ".env" },
+    exclude = {  },
+    --[[ exclude = { ".gitignore", ".env" }, ]]
   },
   update_cwd = true,
   renderer = {
@@ -105,7 +106,7 @@ local config = {
   },
   view = {
     width = 30,
-    hide_root_folder = false,
+    --[[ hide_root_folder = false, ]]
     side = "left",
     -- auto_resize = true,
     number = false,

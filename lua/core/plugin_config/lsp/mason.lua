@@ -8,6 +8,7 @@ if not status_ok_1 then
   return
 end
 
+-- must have install GO, or could cause problems! Same with C#
 local servers = {
   "html",
   "cssls",
@@ -21,8 +22,9 @@ local servers = {
   "jsonls",
   "prismals",
   "yamlls",
+  "solargraph",
+  "gopls",
   --[[ "csharp_ls", ]]
-  --[[ "gopls", ]]
 }
 -- TODO: For python (config later...)
 -- "black",

@@ -25,6 +25,8 @@ vim.g.maplocalleader = " "
 keymap("n", "<Leader>w", ":w<CR>", opts)
 -- keymap("n", "<Leader>q", ":q<CR>", opts)
 
+-- Format
+keymap("n", "<Leader>F", ":Format<CR>", opts)
 
 -- Space + a visual inner word
 keymap("n", "<Leader>a", "viw", opts)

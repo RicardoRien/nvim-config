@@ -8,6 +8,11 @@ if not status_cmp_ok then
 end
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
+-- Folding!
+M.capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true
+}
 
 -- Specify how the border looks like
 local border = {
@@ -110,7 +115,8 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>m", "<cmd>Format<cr>", opts)
 
   vim.keymap.set("n", "<Leader>q", function()
-    vim.diagnostic.setloclist({ open = false }) -- don't open and focus
+    --[[ vim.diagnostic.setloclist({ open = false }) -- don't open and focus ]]
+    vim.diagnostic.setloclist({ open = true }) -- don't open and focus
     local window = vim.api.nvim_get_current_win()
     vim.cmd.lwindow() -- open+focus loclist if has entries, else close -- this is the magic toggle command
     vim.api.nvim_set_current_win(window) -- restore focus to window you were editing (delete this if you want to stay in loclist)
