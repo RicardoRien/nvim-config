@@ -24,6 +24,7 @@ local servers = {
   "yamlls",
   "solargraph",
   "gopls",
+  "bashls",
   --[[ "csharp_ls", ]]
 }
 -- TODO: For python (config later...)
@@ -81,6 +82,11 @@ for _, server in pairs(servers) do
 
   if server == "gopls" then
     local gopls_opts = require "core.plugin_config.lsp.settings.gopls"
+    opts = vim.tbl_deep_extend("force", gopls_opts, opts)
+  end
+
+  if server == "bashls" then
+    local gopls_opts = require "core.plugin_config.lsp.settings.bashls"
     opts = vim.tbl_deep_extend("force", gopls_opts, opts)
   end
 
